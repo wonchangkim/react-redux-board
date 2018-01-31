@@ -10,8 +10,8 @@ const accountProps ={
   as: Link,
   to: '/account'
 }
-export default class TopMenuContainer extends Component {
 
+export default class TopMenuContainer extends Component {
   render() {
     return (
       <TopMenu logoProps={logoProps} accountProps={accountProps} />
