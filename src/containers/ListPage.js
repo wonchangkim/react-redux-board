@@ -6,6 +6,6 @@ const ListPage = () => (
   <div>
     <TopMenuContainer />
   </div>
-)
+);
 
 export default withAuth(ListPage);
