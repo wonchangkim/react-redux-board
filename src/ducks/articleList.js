@@ -1,3 +1,5 @@
+import * as firebase from 'firebase';
+
 export const LOADING = 'articleList/LOADING';
 export const SUCCESS = 'articleList/SUCCESS';
 
@@ -7,7 +9,7 @@ export function articleListLoading() {
   };
 }
 
-export function successArticle(articles) {
+export function articleListSuccess(articles) {
   return {
     type: SUCCESS,
     articles,
@@ -35,3 +37,17 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+export const fetchArticleList = () => async (dispatch) => {
+  dispatch(articleListLoading());
+  const snapshot = await firebase.database().ref('acticles').once('value');
+  const articlesObj = snapshot.val();
+  // console.log(articlesObj);
+  const articles = Object.entries(articlesObj).map(([id, article]) => ({
+    ...article,
+    id,
+    nickName: '닉네임', // FIXME
+  }));
+  dispatch(articleListSuccess(articles));
+};
+
