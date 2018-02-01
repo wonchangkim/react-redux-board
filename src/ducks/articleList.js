@@ -31,7 +31,7 @@ export default function (state = initialState, action) {
     case SUCCESS:
       return {
         loading: false,
-        articles: action.acticles,
+        articles: action.articles,
       };
     default:
       return state;
