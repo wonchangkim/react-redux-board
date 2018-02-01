@@ -5,7 +5,7 @@ import ListPage from './containers/ListPage';
 import withAuth from './hocs/withAuth';
 
 const Home = withAuth(() =>
-  <Redirect to="/list" />,);
+  <Redirect to="/list" />);
 
 class App extends Component {
   render() {
