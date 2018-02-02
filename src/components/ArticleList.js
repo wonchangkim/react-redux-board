@@ -7,9 +7,8 @@ export default class ArticleList extends Component {
     articles: [],
     onMount: () => {},
   }
-  componentDidMount() {
-    this.props.onMount();
-  }
+
+  // 데이터를 다루는 코드는 프리젠트컴포넌트에서 하지말자.
   render() {
     const { articles } = this.props;
     return (
