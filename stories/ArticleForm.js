@@ -5,4 +5,6 @@ import ActicleForm from '../src/components/ArticleForm';
 
 storiesOf('ActicleForm', module)
   .add('default', () => (<ActicleForm onSubmit={action('onSubmit')} />))
-  .add('error message', () => (<ActicleForm errorMessage="필드를 모두 채워야 합니다." />));
+  .add('error message', () => (<ActicleForm errorMessage="필드를 모두 채워야 합니다." />))
+  .add('creating', () => (<ActicleForm creating />));
+
