@@ -40,7 +40,7 @@ export default function (state = initialState, action) {
 
 export const fetchArticleList = () => async (dispatch) => {
   dispatch(articleListLoading());
-  const snapshot = await firebase.database().ref('acticles').once('value');
+  const snapshot = await firebase.database().ref('articles').once('value');
   const articlesObj = snapshot.val();
   // console.log(articlesObj);
   const articles = Object.entries(articlesObj).map(([id, article]) => ({

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import ArticleForm from '../components/ArticleForm';
 import { createArticle } from '../ducks/article';
+
 class ArticleFormContainer extends Component {
   render() {
     const { success, ...rest } = this.props;
